@@ -8,6 +8,8 @@ import android.util.Log;
 public class OnDestroyCheckerService extends Service {
 
   private static final String TAG = "onDestroyChecker";
+  private static String title;
+  private static String description;
 
   @Override
   public IBinder onBind(Intent intent) {
@@ -17,16 +19,24 @@ public class OnDestroyCheckerService extends Service {
 
   @Override
   public int onStartCommand(Intent intent, int flags, int startId) {
+    Log.d(TAG, "onStartCommand");
     super.onStartCommand(intent, flags, startId);
-    Log.d(TAG, "onStartCommand run");
+    if (intent != null && intent.getExtras() != null) {
+      title = intent.getExtras().getString("notificationTitle");
+      description = intent.getExtras().getString("notificationDescription");
+    }
     NotificationHelper.cancelNotification(getApplicationContext());
+    Log.i(TAG, "Service: " + title);
+    Log.i(TAG, "Service: " + description);
     return START_NOT_STICKY;
   }
 
   @Override
   public void onDestroy() {
-    super.onDestroy();
-    NotificationHelper.createNotification("App is closed or not responding.", "Open the app again to keep getting alarms", getApplicationContext());
+    NotificationHelper.createNotification(title, description, getApplicationContext());
+    Log.i(TAG, "Service: " + title);
+    Log.i(TAG, "Service: " + description);
     Log.i(TAG, "Service destroying");
+    super.onDestroy();
   }
 }

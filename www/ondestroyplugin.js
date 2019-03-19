@@ -1,6 +1,8 @@
-module.exports = function () {
- exports.setEventListener = function (callback) {
-  cordova.exec (callback, undefined, "OnDestroyPlugin", "setEventListener", [])
- }
- return exports
-} ()
+module.exports = function() {
+
+  exports.startService = function(title, description) {
+    cordova.exec(undefined, undefined, "OnDestroyPlugin", "startService", [title, description]);
+  };
+
+  return exports
+}();

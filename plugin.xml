@@ -10,7 +10,8 @@
  <platform name="android">
   <config-file target="res/xml/config.xml" parent="/*">
    <feature name="OnDestroyPlugin">
-    <param name="android-package" value="com.flyingsoftgames.ondestroyplugin.OnDestroyPlugin"/>
+      <param name="android-package" value="com.flyingsoftgames.ondestroyplugin.OnDestroyPlugin"/>
+      <param name="onload" value="true" />
    </feature>
   </config-file>
   <source-file src="src/android/OnDestroyPlugin.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />

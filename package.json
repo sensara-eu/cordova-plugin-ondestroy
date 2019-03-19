@@ -1,12 +1,46 @@
 {
- "name": "cordova-plugin-ondestroy",
- "version" : "1.0.4",
- "description" : "Sets an event listener that runs when the Cordova Activity is destroyed.",
- "cordova": {
-  "id" : "cordova-plugin-ondestroy",
-  "platforms": ["android"]
- },
- "keywords": ["cordova"," phonegap", "android", "agamemnus", "flyingsoftgames", "ondestroy"],
- "author": "Michael Romanovsky",
- "license": "MIT (see readme.md)"
+  "_from": "git+https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+  "_id": "cordova-plugin-ondestroy@1.0.4",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-ondestroy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+    "rawSpec": "https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+    "saveSpec": "git+https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+    "fetchSpec": "https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/sensara-eu/cordova-plugin-ondestroy.git#7ef1bb5cdfea11384d01cd812c92cac2699913da",
+  "_spec": "https://github.com/sensara-eu/cordova-plugin-ondestroy.git",
+  "_where": "/Users/peterxhofleer/Sensara/procare/cordova/SensaraProCare",
+  "author": {
+    "name": "Michael Romanovsky"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-ondestroy",
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "Sets an event listener that runs when the Cordova Activity is destroyed.",
+  "keywords": [
+    "cordova",
+    " phonegap",
+    "android",
+    "agamemnus",
+    "flyingsoftgames",
+    "ondestroy"
+  ],
+  "license": "MIT (see readme.md)",
+  "name": "cordova-plugin-ondestroy",
+  "version": "1.0.4"
 }
