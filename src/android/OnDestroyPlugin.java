@@ -1,44 +1,32 @@
 package com.flyingsoftgames.ondestroyplugin;
 
-import org.apache.cordova.CallbackContext;
-import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
+import org.apache.cordova.CallbackContext;
+import org.apache.cordova.CordovaPlugin;
+import org.json.JSONArray;
+import org.json.JSONException;
+
 public class OnDestroyPlugin extends CordovaPlugin {
 
- private CallbackContext onDestroyCallback = null;
- private final String LOG_TAG = "onDestroyPlugin";
+    private CallbackContext onDestroyCallback = null;
+    private final String LOG_TAG = "onDestroyPlugin";
 
- public boolean execute(String action, JSONArray inputs, CallbackContext callbackContext) throws JSONException {
-  onDestroyCallback = callbackContext;
-  return true;
- }
+    public boolean execute(String action, JSONArray inputs, CallbackContext callbackContext) throws JSONException {
+        onDestroyCallback = callbackContext;
+        Log.d(LOG_TAG, "execute");
+        Context context = this.cordova.getActivity().getApplicationContext();
+        final Intent i = new Intent(context, OnDestroyCheckerService.class);
+        i.putExtra("KEY1", "Value to be used by the service"); // add data to the intent
+        context.startService(i);
+        return true;
+    }
 
- @Override
- public void onStart() {
-  Log.d(LOG_TAG, "onCreate");
-  Context context = this.cordova.getActivity().getApplicationContext();
-  final Intent i = new Intent(context, OnDestroyCheckerService.class);
-  i.putExtra("KEY1", "Value to be used by the service"); // add data to the intent
-  context.startService(i);
- }
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+    }
 
- @Override
- public void onDestroy() {
-//  if (onDestroyCallback != null) onDestroyCallback.sendPluginResult(pluginResultKeep());
-  super.onDestroy();
- }
-
-// private PluginResult pluginResultKeep() {
-//  PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
-//  pluginResult.setKeepCallback(true);
-//  return pluginResult;
-// }
 }

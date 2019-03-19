@@ -27,19 +27,19 @@ public abstract class NotificationHelper {
     resultIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
     PendingIntent resultPendingIntent = PendingIntent.getActivity(
-      context,
-      0,
-      resultIntent,
-      PendingIntent.FLAG_UPDATE_CURRENT
+            context,
+            0,
+            resultIntent,
+            PendingIntent.FLAG_UPDATE_CURRENT
     );
 
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, CHANNEL_ID);
     mBuilder.setSmallIcon(R.mipmap.icon);
     mBuilder.setContentTitle(title)
-      .setContentText(message)
-      .setAutoCancel(false)
-      .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
-      .setContentIntent(resultPendingIntent);
+            .setContentText(message)
+            .setAutoCancel(false)
+            .setSound(Settings.System.DEFAULT_NOTIFICATION_URI)
+            .setContentIntent(resultPendingIntent);
 
     NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
@@ -59,7 +59,7 @@ public abstract class NotificationHelper {
     mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
   }
 
-  public void cancelNotification(Context context) {
+  public static void cancelNotification(Context context) {
     NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
     if (mNotificationManager == null) {
       return;

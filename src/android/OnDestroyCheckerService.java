@@ -19,13 +19,14 @@ public class OnDestroyCheckerService extends Service {
   public int onStartCommand(Intent intent, int flags, int startId) {
     super.onStartCommand(intent, flags, startId);
     Log.d(TAG, "onStartCommand run");
+    NotificationHelper.cancelNotification(getApplicationContext());
     return START_NOT_STICKY;
   }
 
   @Override
   public void onDestroy() {
     super.onDestroy();
-    NotificationHelper.createNotification("App is closed or not responding.", "Open the app again to keep getting alarms", this);
+    NotificationHelper.createNotification("App is closed or not responding.", "Open the app again to keep getting alarms", getApplicationContext());
     Log.i(TAG, "Service destroying");
   }
 }
