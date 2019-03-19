@@ -57,6 +57,13 @@ public abstract class NotificationHelper {
       mBuilder.setChannelId(CHANNEL_ID);
     }
     mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
+  }
 
+  public void cancelNotification(Context context) {
+    NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+    if (mNotificationManager == null) {
+      return;
+    }
+    mNotificationManager.cancel(NOTIFICATION_ID);
   }
 }
