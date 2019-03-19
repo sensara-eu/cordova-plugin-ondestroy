@@ -14,5 +14,10 @@
    </feature>
   </config-file>
   <source-file src="src/android/OnDestroyPlugin.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
+  <source-file src="src/android/NotificationHelper.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
+  <source-file src="src/android/OnDestroyCheckerService.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
+  <config-file target="AndroidManifest.xml" parent="/manifest/application">
+   <service android:name="com.flyingsoftgames.ondestroyplugin.OnDestroyCheckerService" />
+  </config-file>
  </platform>
 </plugin>
