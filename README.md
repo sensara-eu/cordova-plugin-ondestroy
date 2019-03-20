@@ -1,15 +1,21 @@
 onDestroy
 ========================
 
-Sets an event listener that runs when the Cordova Activity is "destroyed". Note that this event does not always run before a program is removed from memory (see below link and image).
+Sets an service that create a local notification when is "destroyed".
 
-http://stackoverflow.com/questions/18361719/android-activity-ondestroy-is-not-always-called-and-if-called-only-part-of-the/18361887#18361887
+The translations are added as string resource through the plugin.xml. 
+Change the translations by changing the content there. 
 
-![activity_lifecycle](https://developer.android.com/images/activity_lifecycle.png)
+(Can we change from upper level like override in cordova config?) 
 
-Usage / Function List
+
+Usage
 ----------------------
+#### Add the notification sound
+Place wav sound below your ``res/raw`` folder. Use ``app_closed.wav`` as name.
 
+#### Start the service. 
+After device ready
 ````
-window.plugins.OnDestroyPlugin.setEventListener (function)
+window.plugins.OnDestroyPlugin.startService ()
 ````
