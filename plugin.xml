@@ -13,6 +13,7 @@
   <source-file src="src/android/NotificationHelper.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
   <source-file src="src/android/OnDestroyCheckerService.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
   <resource-file src="assets/app_closed.wav" target="res/raw/app_closed.wav" />
+  <resource-file src="resources/values-nl/strings.xml" target="res/values-nl/strings.xml" />
 
   <config-file target="res/xml/config.xml" parent="/*">
    <feature name="OnDestroyPlugin">
