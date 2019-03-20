@@ -8,25 +8,32 @@
  <engines><engine name="cordova" version=">=3.0.0" /></engines>
  <js-module src="www/ondestroyplugin.js" name="OnDestroyPlugin"><clobbers target="window.plugins.OnDestroyPlugin" /></js-module>
  <platform name="android">
-  <config-file target="res/xml/config.xml" parent="/*">
-   <feature name="OnDestroyPlugin">
-      <param name="android-package" value="com.flyingsoftgames.ondestroyplugin.OnDestroyPlugin"/>
-      <param name="onload" value="true" />
-   </feature>
-  </config-file>
+
   <source-file src="src/android/OnDestroyPlugin.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
   <source-file src="src/android/NotificationHelper.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
   <source-file src="src/android/OnDestroyCheckerService.java" target-dir="src/com/flyingsoftgames/ondestroyplugin" />
+  <resource-file src="assets/app_closed.wav" target="res/raw/app_closed.wav" />
+
+  <config-file target="res/xml/config.xml" parent="/*">
+   <feature name="OnDestroyPlugin">
+    <param name="android-package" value="com.flyingsoftgames.ondestroyplugin.OnDestroyPlugin"/>
+    <param name="onload" value="true" />
+   </feature>
+  </config-file>
+
   <config-file target="AndroidManifest.xml" parent="/manifest/application">
    <service android:name="com.flyingsoftgames.ondestroyplugin.OnDestroyCheckerService" />
   </config-file>
+
   <config-file target="res/values/strings.xml" parent="/*">
    <string name="app_closed_notification_title">Sensara app closed</string>
    <string name="app_closed_notification_description">Open the app again to keep getting alarms</string>
   </config-file>
+
   <config-file target="res/values-nl/strings.xml" parent="/*">
    <string name="app_closed_notification_title">Sensara app is gesloten</string>
    <string name="app_closed_notification_description">Open de app om alarmen te ontvangen</string>
   </config-file>
+
  </platform>
 </plugin>
