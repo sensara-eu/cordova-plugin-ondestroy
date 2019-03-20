@@ -20,5 +20,13 @@
   <config-file target="AndroidManifest.xml" parent="/manifest/application">
    <service android:name="com.flyingsoftgames.ondestroyplugin.OnDestroyCheckerService" />
   </config-file>
+  <config-file target="res/values/strings.xml" parent="/*">
+   <string name="app_closed_notification_title">Sensara app closed</string>
+   <string name="app_closed_notification_description">Open the app again to keep getting alarms</string>
+  </config-file>
+  <config-file target="res/values-nl/strings.xml" parent="/*">
+   <string name="app_closed_notification_title">Sensara app is gesloten</string>
+   <string name="app_closed_notification_description">Open de app om alarmen te ontvangen</string>
+  </config-file>
  </platform>
 </plugin>
