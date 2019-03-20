@@ -1,7 +1,7 @@
 module.exports = function() {
 
-  exports.startService = function(title, description) {
-    cordova.exec(undefined, undefined, "OnDestroyPlugin", "startService", [title, description]);
+  exports.startService = function() {
+    cordova.exec(undefined, undefined, "OnDestroyPlugin", "startService", []);
   };
 
   return exports
