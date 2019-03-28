@@ -39,9 +39,9 @@ public abstract class NotificationHelper {
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, CHANNEL_ID);
     mBuilder.setSmallIcon(R.mipmap.icon);
     mBuilder.setContentTitle(context.getResources().getString(R.string.app_closed_notification_title))
-            .setContentText(context.getResources().getString(R.string.app_closed_notification_description))
             .setSound(sound)
             .setAutoCancel(false)
+            .setStyle(new NotificationCompat.BigTextStyle().bigText(context.getResources().getString(R.string.app_closed_notification_description)))
             .setContentIntent(resultPendingIntent);
 
     NotificationManager mNotificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
