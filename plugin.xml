@@ -27,13 +27,13 @@
   </config-file>
 
   <config-file target="res/values/strings.xml" parent="/*">
-   <string name="app_closed_notification_title">Sensara alarms are not received!</string>
-   <string name="app_closed_notification_description">Sensara app is closed.\nOpen your app to receive the alarms again.</string>
+   <string name="app_closed_notification_title">Sensara app is closed</string>
+   <string name="app_closed_notification_description">Open the app again to keep getting alarms</string>
   </config-file>
 
   <config-file target="res/values-nl/strings.xml" parent="/*">
-   <string name="app_closed_notification_title">Sensara alarmen worden niet ontvangen!</string>
-   <string name="app_closed_notification_description">Sensara app is gesloten.\nOpen de app om de alarmen weer te ontvangen.</string>
+   <string name="app_closed_notification_title">Sensara app is gesloten</string>
+   <string name="app_closed_notification_description">Open de app om alarmen weer te ontvangen</string>
   </config-file>
 
  </platform>
