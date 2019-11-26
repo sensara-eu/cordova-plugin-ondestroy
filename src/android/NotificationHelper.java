@@ -37,7 +37,7 @@ public abstract class NotificationHelper {
     Uri sound = Uri.parse(ContentResolver.SCHEME_ANDROID_RESOURCE + "://" + context.getPackageName() + "/" + R.raw.app_closed);
 
     NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, CHANNEL_ID);
-    mBuilder.setSmallIcon(R.mipmap.small_icon);
+    mBuilder.setSmallIcon(R.drawable.small_icon);
     mBuilder.setContentTitle(context.getResources().getString(R.string.app_closed_notification_title))
             .setContentText(context.getResources().getString(R.string.app_closed_notification_description))
             .setSound(sound)
